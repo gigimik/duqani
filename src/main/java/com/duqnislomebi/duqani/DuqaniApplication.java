@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DuqaniApplication {
 
-    // test
     public static void main(String[] args) {
         SpringApplication.run(DuqaniApplication.class, args);
     }
