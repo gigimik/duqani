@@ -29,15 +29,15 @@ public class FoodFacility {
     @Column
     private String email;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Sale sale;
 
-    @OneToMany(mappedBy = "dish")
+    @OneToMany(mappedBy = "dish", fetch = FetchType.EAGER)
     private Set<FacilityDishes> facilityDishes = new HashSet<>();
 
-    @OneToMany(mappedBy = "drink")
+    @OneToMany(mappedBy = "drink", fetch = FetchType.EAGER)
     private Set<FacilityDrinks> facilityDrinks = new HashSet<>();
 
-    @OneToMany(mappedBy = "dessert")
+    @OneToMany(mappedBy = "dessert", fetch = FetchType.EAGER)
     private Set<FacilityDesserts> facilityDesserts = new HashSet<>();
 }

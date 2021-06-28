@@ -16,10 +16,6 @@ public class FacilityDrinks {
     private FacilityDrinkId id = new FacilityDrinkId();
 
     @ManyToOne
-    @MapsId("facilityId")
-    private FoodFacility foodFacility;
-
-    @ManyToOne
     @MapsId("drinkId")
     private Drink drink;
 
