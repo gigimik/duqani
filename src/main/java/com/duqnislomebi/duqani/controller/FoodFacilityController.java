@@ -22,7 +22,7 @@ public class FoodFacilityController {
     }
 
     @GetMapping("getFacilities")
-    public Page<FoodFacility> getFoodFacilities(@RequestBody SearchRequest searchRequest) {
+    public Page<FoodFacility> getFoodFacilities(SearchRequest searchRequest) {
         return foodFacilityFacade.getFoodFacilities(searchRequest);
     }
 }
