@@ -32,11 +32,12 @@ public class FoodFacility {
     @ManyToOne(fetch = FetchType.LAZY)
     private Sale sale;
 
-    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "facility_dishes",
-            joinColumns = {@JoinColumn(name = "FACILITY_ID")},
-            inverseJoinColumns = {@JoinColumn(name = "DISH_ID")}
-    )
-    private Set<Dish> dishes = new HashSet<>();
+    @OneToMany(mappedBy = "dish")
+    private Set<FacilityDishes> facilityDishes = new HashSet<>();
+
+    @OneToMany(mappedBy = "drink")
+    private Set<FacilityDrinks> facilityDrinks = new HashSet<>();
+
+    @OneToMany(mappedBy = "dessert")
+    private Set<FacilityDesserts> facilityDesserts = new HashSet<>();
 }

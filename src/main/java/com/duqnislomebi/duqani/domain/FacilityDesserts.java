@@ -1,27 +1,27 @@
 package com.duqnislomebi.duqani.domain;
 
-import com.duqnislomebi.duqani.domain.embeddable.FacilityDishId;
+import com.duqnislomebi.duqani.domain.embeddable.FacilityDessertId;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "facility_dishes")
+@Table(name = "facility_desserts")
 @Setter
 @Getter
-public class FacilityDishes {
+public class FacilityDesserts {
 
     @EmbeddedId
-    private FacilityDishId id = new FacilityDishId();
+    private FacilityDessertId id = new FacilityDessertId();
 
     @ManyToOne
     @MapsId("facilityId")
     private FoodFacility foodFacility;
 
     @ManyToOne
-    @MapsId("dishId")
-    private Dish dish;
+    @MapsId("dessertId")
+    private Dessert dessert;
 
     @Column
     private Integer price;
